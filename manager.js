@@ -1,22 +1,20 @@
 const Employee = require('./employee')
 
 class Manager extends Employee{
-    constructor(name,title,salary,employees){
+    constructor(name,title,salary){
         super(name,title,salary);
-        this.employees = employees;
+        this.employees = [];
+        
     }
 
-    addEmployee(employees){
-        let employeeArr = [];
-        employees.forEach(employee => {
-            employeeArr.push(employee);
-        });
-        return employeeArr;
+    addEmployee(employee){
+        this.employees.push(employee)
     }
 
 }
 
 let annie = new Manager('Annie', 100000, 'Director')
 let alvy = new Employee('Alvy', 75000, 'Analyst', annie)
+
 
 console.log(annie)

@@ -1,11 +1,12 @@
 class Employee{
-    constructor(name,title,salary,boss){
+    constructor(name,title,salary,boss = null){
         this.name = name;
         this.title = title;
         this.salary = salary;
-        this.boss = boss;
-
-        // addEmployee();
+        this.manager = boss;
+        if (boss) {
+            boss.addEmployee(this);
+        }
     }
 }
 
